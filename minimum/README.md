@@ -2,14 +2,18 @@
 
 ## 最小限の分割例
 
-### 実行
+### 実行過程
 
-```console:input.step.01
+#### step.01 &colon; 入力
+
+```console
 CMAKE_CURRENT_SOURCE_DIR$ cd build
 CMAKE_CURRENT_SOURCE_DIR/build$ cmake -DCMAKE_BUILD_TYPE=Debug ..
 ```
 
-```text:output.step.01
+#### step.01 &colon; 出力
+
+```text
 -- The Fortran compiler identification is GNU 9.4.0
 -- Check for working Fortran compiler: /usr/bin/f95
 -- Check for working Fortran compiler: /usr/bin/f95  -- works
@@ -22,11 +26,15 @@ CMAKE_CURRENT_SOURCE_DIR/build$ cmake -DCMAKE_BUILD_TYPE=Debug ..
 -- Build files have been written to: /CMAKE_CURRENT_SOURCE_DIR/build
 ```
 
-```console:input.step.02
+#### step.02 &colon; 入力
+
+```console
 CMAKE_CURRENT_SOURCE_DIR/build$ make
 ```
 
-```text:output.step.02
+#### step.02 &colon; 出力
+
+```text
 Scanning dependencies of target sample
 [ 25%] Building Fortran object package/CMakeFiles/sample.dir/module.f90.o
 [ 50%] Linking Fortran static library libsample.a
@@ -40,12 +48,24 @@ hoge:~/CMAKE_CURRENT_SOURCE_DIR/build$ ./sample.exe
 hoge:~/CMAKE_CURRENT_SOURCE_DIR/build$ ^C
 ```
 
-```console:input.step.03
+#### step.03 &colon; 入力
+
+```console
 CMAKE_CURRENT_SOURCE_DIR/build$ ./sample.exe
 ```
 
-```console:input.step.03
+#### step.03 &colon; 出力
+
+```text
  GCC version 9.4.0
+```
+
+#### `build` フォルダの削除（初期化）
+
+```console
+CMAKE_CURRENT_SOURCE_DIR/build$ cd ../
+CMAKE_CURRENT_SOURCE_DIR$ rm -rf build/
+CMAKE_CURRENT_SOURCE_DIR$ mkdir build
 ```
 
 <!-- EOF -->
